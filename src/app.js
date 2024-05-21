@@ -7,11 +7,9 @@ const session = require("express-session");
 var helpers = require('handlebars-helpers')({
     handlebars: hbs
 });
-const stripe = require('stripe')(process.env.STRIPE_KEY);
 const UniqueStringGenerator = require('unique-string-generator');
 const date = require('date-and-time');
-const bcrypt = require('bcrypt');
-const multer = require('multer');
+
 
 
 
