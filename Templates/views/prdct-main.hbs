@@ -1,0 +1,45 @@
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="prdct-details-cont">
+            <div class="prdct-big-img">
+                <img src="{{clickedProduct.photoUrl}}" alt="">
+            </div>
+            <div class="prdct-details">
+                <div class="product-title">
+                    <h2>{{clickedProduct.name}}</h2>
+                    <p>₹{{clickedProduct.price}}.00</p> <br>
+                    <div style="display:none;" id="seller">
+                        <p>Name : {{sellerDetails.firstName}} {{sellerDetails.lastName}}</p>
+                        <p>Email : {{sellerDetails.email}}</p>
+                    </div>
+                    <p style="font-weight: 200;" class="prdct-detail-p">{{clickedProduct.description}}
+                        <br>
+                        <br>
+                        <br>
+                        <span class="little-bold">No of Rooms :</span> {{clickedProduct.noOfRoom}} <br><br>
+
+                        <span class="little-bold">No of Washroom :</span> {{clickedProduct.noOfWashRoom}}
+
+                    </p>
+
+                    <div class="buy-btn">
+
+                        <button onclick="showSeller()"
+                            style="background-color: white;color:black;border:1px solid black;padding:6px 10px">Interested
+                            ?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showSeller() {
+            document.getElementById('seller').style.display = 'block';
+
+        }
+    </script>
+
+
+    {{>bottomBar}}
+</body>

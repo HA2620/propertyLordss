@@ -1,0 +1,35 @@
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="login-box">
+            <div class="sub-heading">
+                <h2>LOGIN</h2>
+            </div>
+            <div class="login-form">
+                <form action="/login" method="POST">
+                    <div class="fr-mail fr-cnt">
+                        <p>Email</p>
+                        <input type="email" name="email">
+                    </div>
+
+                    <div class="fr-mail fr-cnt">
+                        <p>Password </p>
+                        <input type="password" name="password" id=""> <br>
+                        <span class="err-msg">{{message}}</span>
+                    </div>
+                    <span>Please use admin email - harshprasad338@gmail.com user-email: manimalapandey49@gmail.com password - mnbv0987</span>
+                    <input type="submit" value="Sign In">
+                    <div class="form-other-stuff">
+                        <a href="/forgetPass">Forgot password?</a>
+                        <br>
+                        <br>
+                        <a href="/register">Create an account?</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    {{>bottomBar}}
+</body>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Encode+Sans+Semi+Expanded:wght@300&family=Encode+Sans:wght@100;200&family=Inter:wght@700&family=Montserrat:wght@400;500;600;700&family=Open+Sans&family=Raleway:wght@300;400;500&family=Roboto:wght@500&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/e17fd0eebe.js" crossorigin="anonymous"></script>
+  {{!--
+  <link rel="stylesheet" href="/css/style.css"> --}}
+  <style>
+    /* Add your custom styles here */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      position: relative;
+      width: 80%;
+      margin: auto;
+    }
+
+
+    .content {
+      flex-grow: 1;
+      padding: 20px;
+      margin-left: 260px;
+      color: rgb(83, 98, 135);
+    }
+
+    .content p {
+      font-size: 14px;
+    }
+
+    .content h1 {
+      display: inline-block;
+    }
+
+    .content input.add-btn {
+      height: 40px;
+
+
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      padding: 10px;
+      padding-top: 20px;
+      flex-basis: calc(50% - 10px);
+      box-sizing: border-box;
+      vertical-align: center;
+      margin-right: 10px;
+      border-right: 4px solid gray;
+      border-bottom: 4px solid gray;
+    }
+
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .product-table th,
+    .product-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .product-table th {
+      background-color: #f0f0f0;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .product-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .product-table a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .product-table a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    /*{{!-- Overlay --}}*/
+    #overlay-product-add-page,
+    #overlay-product-edit-page {
+      position: absolute;
+      display: none;
+
+      top: 10px;
+      left: 270px;
+      background-color: rgb(255, 255, 255);
+      color: #333;
+      z-index: 2;
+      cursor: pointer;
+      /*border: .5px solid gray;*/
+      box-shadow: 5px 5px 10px grey;
+      ;
+      padding: 20px;
+    }
+
+
+    #overlay-product-add-page input,
+    #overlay-product-edit-page input {
+      width: 200px;
+      height: 35px;
+
+    }
+
+    #overlay-product-add-page input[type='radio'],
+    #overlay-product-edit-page input[type='radio'] {
+      width: 15px;
+      height: 15px;
+    }
+
+    #overlay-product-add-page input[type='file'],
+    #overlay-product-edit-page input[type='file'] {
+      width: 100px;
+      height: 20px;
+      font-size: 16px;
+
+    }
+
+    #overlay-product-add-page input.right-up,
+    #overlay-product-edit-page input.right-up {
+      float: right;
+      width: 30px;
+      height: 30px;
+      font-size: 16;
+    }
+
+    div.fr-cnt {
+
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .text {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  </style>
+
+</head>
+
+
+<body>
+  <div class="container">
+
+    <div id="overview">
+      <div>
+        <h2>Seller Details</h2>
+        <p>Name : {{sellerDetails.firstName}} {{sellerDetails.lastName}}</p>
+        <br>
+        <p>Verified : {{sellerDetails.verified}}</p>
+
+
+      </div>
+      <div id="products">
+        <h1>Properties</h1>
+        <input class="add-btn" type="button" value="+ add product" onclick="on()" />
+        <br><br>
+        <div id="overlay-product-add-page">
+          <input type="button" value="X" class="right-up" onclick="off()">
+          <h1>Add Property</h1>
+          <div class="login-form">
+            <form action="/admin/add-product" method="post">
+              <div class="fr-cnt">
+                <label for="productId">Product ID - </label>
+                <input type="number" id="productId" name="productId" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="productName">Property Name - </label>
+                <input type="text" id="productName" name="productName" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="productDescription">Property Description - </label>
+                <input type="text" id="productDescription" name="productDescription" required>
+              </div>
+              <div class="fr-cnt">
+                <label for="productLocation">Location - </label>
+                <input type="text" id="productLocation" name="productLocation" required>
+              </div>
+              <div class="fr-cnt">
+                <label for="productPrice">Property Price [per month] - </label>
+                <input type="number" id="productPrice" name="productPrice" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="noOfRoom">No of Rooms - </label>
+                <input type="number" id="noOfRoom" name="noOfRoom" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="noOfWashroom">No of washrooms - </label>
+                <input type="number" id="noOfWashroom" name="noOfWashroom" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="nearestCollege">Nearest College [kms] - </label>
+                <input type="number" id="nearestCollege" name="nearestCollege" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="nearestMetro">Nearest Metro [kms] - </label>
+                <input type="number" id="nearestMetro" name="nearestMetro" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="nearestHospital">Nearest Hospital [kms] - </label>
+                <input type="number" id="nearestHospital" name="nearestHospital" required />
+              </div>
+              <div class="fr-cnt">
+                <label for="picUrl">Product Picture URL - </label>
+                <input type="text" id="picUrl" name="picUrl" required />
+              </div>
+              <br>
+              <div class="fr-cnt">
+                <input type="submit" value="Submit" />
+              </div>
+            </form>
+          </div>
+        </div>
+        <table class="product-table">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Rooms</th>
+            <th>Washroom</th>
+            <th>Action</th>
+          </tr>
+          <tr>
+            {{#each products}}
+            <td>{{this.propertyId}}</td>
+            <td>{{this.name}}</td>
+            <td>₹{{this.price}}</td>
+            <td>{{this.noOfRoom}}</td>
+            <td>{{this.noOfWashRoom}}</td>
+            <td><a href="/admin/dashboard/product/edit?id={{this._id}}">Edit</a> | <a
+                href="/admin/dashboard/product/delete?id={{this._id}}">Delete</a></td>
+          </tr>
+          {{/each}}
+
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function on() {
+      document.getElementById("overlay-product-add-page").style.display = "block";
+    }
+
+    function off() {
+      document.getElementById("overlay-product-add-page").style.display = "none";
+    }
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+// TO INSERT MANY DATA AT ONE GO
+
+    // Product.insertMany([{
+    //     name: "BUTTON WIDE LEG JEANS",
+    //     prod_id: 13,
+    //     qty: 10,                  // To add new product manually (temprorary)
+    //     price: 1400,
+    //     description: "Made from premium cotton, this pair mom jeans URBAN CLOTHING ONLY deserves to be shown off! Features a 5-pocket design, high rise, zip fly and gently tapered legs. Pair it with a white crop top and chunky sneakers for a cool vibe.wear.",
+    //     origin: 'INDIA',
+    //     fabric: 'Cotton',
+    //     category:'bottom'
+
+
+    // },
+    // {
+    //     name: "RIPPED WIDE LEG JEANS",
+    //     prod_id: 14,
+    //     qty: 10,                  // To add new product manually (temprorary)
+    //     price: 2100,
+    //     description: "Made from premium cotton, this pair mom jeans URBAN CLOTHING ONLY deserves to be shown off! Features a 5-pocket design, high rise, zip fly and gently tapered legs. Pair it with a white crop top and chunky sneakers for a cool vibe.wear.",
+    //     origin: 'INDIA',
+    //     fabric: 'Cotton',
+    //     category:'bottom'
+
+    // }, {
+    //     name: "POCKET JOGGER",
+    //     prod_id: 11,
+    //     qty: 15,                  // To add new product manually (temprorary)
+    //     price: 2400,
+    //     description: "Made from premium cotton, this pair mom jeans URBAN CLOTHING ONLY deserves to be shown off! Features a 5-pocket design, high rise, zip fly and gently tapered legs. Pair it with a white crop top and chunky sneakers for a cool vibe.wear.",
+    //     origin: 'INDIA',
+    //     fabric: 'Polyester',
+    //     category:'bottom'
+
+    // },
+    //{
+    //         name: "CARDIGAN ALPACA SOFT NAVY",
+    //         prod_id: 04,
+    //         qty: 10,                  // To add new product manually (temprorary)
+    //         price: 990,
+    //         description: "PUFFED CASHMERE is a blend of recycled virgin wool and cashmere with a slightly bouclé look. The name derives from the fact that the type of sweaters we make with this yarn always takes ona slightly puffy and light appearance, making it particularly pleasant to wear.",
+    //         origin: 'INDIA',
+    //         fabric: 'Nilon'
+
+    //     },{
+    //         name: "TURTLE NECK SOFT HYBRID PURPLE",
+    //         prod_id: 05,
+    //         qty: 10,                  // To add new product manually (temprorary)
+    //         price: 1500,
+    //         description: "PUFFED CASHMERE is a blend of recycled virgin wool and cashmere with a slightly bouclé look. The name derives from the fact that the type of sweaters we make with this yarn always takes ona slightly puffy and light appearance, making it particularly pleasant to wear.",
+    //         origin: 'INDIA',
+    //         fabric: 'Cotton'
+
+    //     },{
+    //         name: "HOOODIE SEAMLESS PUFFED OLIVE",
+    //         prod_id: 06,
+    //         qty: 10,                  // To add new product manually (temprorary)
+    //         price: 1820,
+    //         description: "PUFFED CASHMERE is a blend of recycled virgin wool and cashmere with a slightly bouclé look. The name derives from the fact that the type of sweaters we make with this yarn always takes ona slightly puffy and light appearance, making it particularly pleasant to wear.",
+    //         origin: 'INDIA',
+    //         fabric: 'Cotton'
+
+    //     },{
+    //         name: "GILET SCOTLAND FURRY BLOSSOM",
+    //         prod_id: 07,
+    //         qty: 10,                  // To add new product manually (temprorary)
+    //         price: 4080,
+    //         description: "CHIFFON is a blend of recycled virgin wool and cashmere with a slightly bouclé look. The name derives from the fact that the type of sweaters we make with this yarn always takes ona slightly puffy and light appearance, making it particularly pleasant to wear.",
+    //         origin: 'INDIA',
+    //         fabric: 'Chiffon'
+
+    //     },
+    // {
+    //     name: "SIMPLICITY SPORTS PANTS",
+    //     prod_id: 16,
+    //     qty: 10,                  // To add new product manually (temprorary)
+    //     price: 3800,
+    //     description: "Made from premium cotton, this pair of jeans from URBAN CLOTHING deserves to be shown off! Features a 5-pocket design, high rise, zip fly and gently tapered legs. Pair it with a white crop top and chunky sneakers for a cool vibe.",
+    //     origin: 'INDIA',
+    //     fabric: 'Polyester',
+    //     category:'bottom'       
+
+    // }
+    // ]);
+
+    // const prodData = new Product({
+    //     name: "CARDIGAN RIBBED HYBRID CASH BEIGE",
+    //     prod_id: 01,
+    //     qty: 10,                  // To add new product manually (temprorary)
+    //     price: 1800,
+    //     description: "PUFFED CASHMERE is a blend of recycled virgin wool and cashmere with a slightly bouclé look. The name derives from the fact that the type of sweaters we make with this yarn always takes ona slightly puffy and light appearance, making it particularly pleasant to wear.",
+    //     origin: 'INDIA',
+    //     fabric: 'Chiffon'
+
+    // });
+    // const prodUpdated = await prodData.save();
+
+
+
+
+    {{!-- <h4>CART</h4> --}}
+    {{!-- <div class="policy-container">
+        <br><br>
+        <div class="login-box">
+            <p>
+                {{#if cartItems}}
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Qty</th>
+                        <th>Price</th>
+                    </tr> Old Cart
+                </thead>
+                {{#each cartItems}} Old Cart Code
+                <tbody>
+                    <tr>
+                        <td>{{this.name}}</td>
+                        <td>1</td>
+                        <td>{{this.price}}</td>
+                    </tr>
+                    <!-- and so on... -->
+                </tbody>
+                {{/each}}
+            </table>
+            {{else}}
+            <span>Your cart is empty</span>
+            {{/if}}
+            </p>
+        </div>
+    </div> --}}

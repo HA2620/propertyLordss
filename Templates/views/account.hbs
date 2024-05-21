@@ -1,0 +1,29 @@
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="login-box">
+            <div class="sub-heading">
+                <h2>MY ACCOUNT</h2>
+            </div>
+        </div>
+        <div class="my-acc-cont">
+            <div class="big-box">
+                <div class="small-box">{{userDetails.firstName}}
+                    {{userDetails.lastName}}</div>
+                <div class="small-box">{{userDetails.email}}</div>
+            </div>
+
+            <div style="display: flex; justify-content:space-evenly; align-items:">
+                <div>
+                <div class="btn"><a class="account-items" href="/seller">Dashboard</a></div>
+                </div>
+
+
+                <div class="btn"><a class="account-items" href="/logout">Logout</a></div>
+            </div>
+        </div>
+    
+
+    </div>
+    {{>bottomBar}}
+</body>
