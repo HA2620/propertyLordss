@@ -463,6 +463,6 @@ app.get("/admin/dashboard/product/delete", async (req, res) => {
         console.log(error);
     }
 });
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
     console.log(`Server is running at ${process.env.PORT}`);
 });
